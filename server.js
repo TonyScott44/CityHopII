@@ -15,6 +15,10 @@ var path = require('path');                                                  //
 //---------------------------------------------------------------------------//
 // Make the Express function easy to call                                    //
 var app = express();                                                         //
+
+
+
+
 //---------------------------------------------------------------------------//
 // Specify Port                                                              //
 var PORT = process.env.PORT || 9044;                                         //
@@ -24,16 +28,23 @@ var PORT = process.env.PORT || 9044;                                         //
 //***************************************************************************//
 //          ** Body Parser NPM Package Code **                               //
 //***************************************************************************//
-app.use(bodyParser.urlencoded({ extended: false })) ;                        //
+app.use(bodyParser.urlencoded({ extended: true })) ;                        //
 app.use(bodyParser.json());                                                  //
                                                                              //
 //---------------------------------------------------------------------------//
-
+app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
 
 //***************************************************************************//
 //             ** Controller/Routing File References **                      //
 //***************************************************************************//
-require('./app/controllers/api-users.js')(app);                              //
+require('./app/controllers/api-routes.js')(app);                             //
+require('./app/controllers/controller.js')(app);                             //
+                                                                             //
+//---------------------------------------------------------------------------//
+//***************************************************************************//
+//             ** Passport/Login File References **                          //
+//***************************************************************************//
+require('./app/config/login.js')(app);                                       //
                                                                              //
                                                                              //
 //---------------------------------------------------------------------------//
