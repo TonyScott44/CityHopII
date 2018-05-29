@@ -4,7 +4,7 @@ var userData = require ('../models/user');
 
 module.exports = function (app) {
 
-    app.get('/api/users', function(req,res) {
+    app.get('/api', function(req,res) {
         res.json(userData);
     })
 
