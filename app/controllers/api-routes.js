@@ -1,11 +1,11 @@
 var path = require('path');
-var userData = require ('../models/user');
+var cityData = require ('../models/api-CityHop');
 
 
 module.exports = function (app) {
 
     app.get('/api', function(req,res) {
-        res.json(userData);
+        res.json(cityData);
     })
 
     // app.get('/api/waitlist', function(req,res) {

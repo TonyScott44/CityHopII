@@ -273,7 +273,7 @@
     </style>
 
     <!--*************************************************************************************************************-->
-    <!--*********************************  Materialize Sheet & Icon Reference  **************************************-->
+    <!--*********************************  Materialize Style Sheet & Icon Reference  **************************************-->
     <!--*************************************************************************************************************-->
     <!--*************************************************************************************************************-->
 
@@ -282,6 +282,15 @@
     <!--Needed to use Materialize icons-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <!--*****************************************************************************************************************-->
+    <!--***************************  JavaScript & jQuery References  ****************************************************-->
+    <!--*****************************************************************************************************************-->
+    <!--*****************************************************************************************************************-->
+    <!-- Materialize's version of compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+    <!--Compiled and minified jQuery-->
+    <script  src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
     <!--*************************************************************************************************************-->
     <!--************************  Local JavaScript Code that corrects URL after Login  ******************************-->
@@ -368,13 +377,15 @@
                             </div> <!--End input field-->
                         </div> <!--End Search Bix-->
                         <!--Submit city button-->
-                        <button id="submit" class="btn waves-effect waves-light" type="submit" name="action" style="background: #00b4b4;">Submit
-                            <i class="material-icons right">send</i>
-                        </button>
+                        <form action="/city" method="get">
+                            <button id="submit" class="btn waves-effect waves-light" type="submit" name="action" style="background: #00b4b4;" onclick="click()" >Submit
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </form>
                     </div> <!--End search area-->
                 </div> <!--End Machotron-->
                 <br>
-                <!--Explore Area Packground Image-->
+                <!--Explore Area Background Image-->
                 <img id="explore" class="" src="http://thestrategicfellow.com/wp-content/uploads/2018/05/miami-beach-night-florida.jpg" alt="">
             </div> <!--End row w/ Machotron-->
 
@@ -398,41 +409,22 @@
 <!--*****************************************************************************************************************-->
 <!--*****************************************************************************************************************-->
 
-<script type="text/javascript">
-    $(document).ready(function () {
-        $(window).on('load scroll', function () {
-            var scrolled = $(this).scrollTop();
-            $('#title').css({
-                'transform': 'translate3d(0, ' + -(scrolled * 0.2) + 'px, 0)', // parallax (20% scroll rate)
-                'opacity': 1 - scrolled / 400 // fade out at 400px from top
-            });
-            $('#hero-vid').css('transform', 'translate3d(0, ' + -(scrolled * 0.25) + 'px, 0)'); // parallax (25% scroll rate)
-        });
+<script>
 
-        // video controls
-        $('#state').on('click', function () {
-            var video = $('#hero-vid').get(0);
-            var icons = $('#state > span');
-            $('#overlay').toggleClass('fade');
-            if (video.paused) {
-                video.play();
-                icons.removeClass('fa-play').addClass('fa-pause');
-            } else {
-                video.pause();
-                icons.removeClass('fa-pause').addClass('fa-play');
-            }
-        });
+    $("#submit").on("click", function() {
+
+        var currentURL = window.location.origin;
+
+        localStorage.setItem("city", $("#citySearch").val());
+        console.log(localStorage.getItem("city"));
+
+
     });
+
 </script>
 
-<!--*****************************************************************************************************************-->
-<!--***************************  JavaScript & jQuery References  ****************************************************-->
-<!--*****************************************************************************************************************-->
-<!--*****************************************************************************************************************-->
-<!-- Materialize's version of compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 
-<!--Compiled and minified jQuery-->
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<!-- Reference to external JavaScript File -->
+<script  src="http://localhost:9044/cityhop-js"></script>
 
 </html>

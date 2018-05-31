@@ -1,3 +1,8 @@
+<!--*****************************************************************************************************************-->
+<!--****************************************  C  I  T  Y    H  O  P    I  I  ****************************************-->
+<!--*****************************************************************************************************************-->
+<!--*****************************************************************************************************************-->
+
 <!doctype html>
 <html lang="en">
 
@@ -6,33 +11,513 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title></title>
-    <!--Google Fonts-->
-    <link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
+    <title>City Hop</title>
 
-    <!--Local Styling-->
+    <!--*************************************************************************************************************-->
+    <!--*********************************************  Google Fonts  ************************************************-->
+    <!--*************************************************************************************************************-->
+    <!--*************************************************************************************************************-->
+    <link href="https://fonts.googleapis.com/css?family=Exo+2:100" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100" rel="stylesheet">
+
+    <!--*************************************************************************************************************-->
+    <!--*********************************************  Local Style Sheet  *******************************************-->
+    <!--*************************************************************************************************************-->
+    <!--*************************************************************************************************************-->
     <style>
+        body {
+            width:100%;
+            height:100%;
+            position: relative;
+        }
+        #explore {
+            margin: 74px 0 0 0;
+            width:100%;
+            position: absolute;
+            height:120vh;
+        }
+
+        @keyframes scroll {
+            0% { opacity: 0; }
+            10% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(15px); opacity: 0;}
+        }
+        nav {
+            color: #fff;
+            font-family:'ABeeZee';
+            font-weight:normal;
+            font-style:normal;
+            font-size: 6vh;
+            width: 100%;
+            height: 100%;
+            line-height: 56px;
+            position: fixed;
+            z-index: 600;
+            margin: 0 0 0 0 ;
+        }
+
+        .sidenav {
+            position: absolute;
+            width: 180px;
+            left: 0;
+            top: 0;
+            margin: 0;
+            -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+            height: 100%;
+            height: calc(100% + 60px);
+            height: -moz-calc(100%);
+            padding-bottom: 60px;
+            background-color: rgba(222, 222, 222, 0.45);
+            z-index: 999;
+            overflow-y: auto;
+            will-change: transform;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transform: translateX(-105%);
+            transform: translateX(-105%);
+        }
+
+        #nav-mobile{
+            font-family: 'Exo 2', sans-serif;
+            font-weight:normal;
+            font-size: 3vh;
+            margin: 0 30px 0 0px;
+
+        }
+
+        p{
+            font-family: 'Work Sans', sans-serif;
+            font-size: 19px;
+            letter-spacing: 1px;
+        }
+        h1 {
+            color:white;
+            font-family: 'Exo 2', sans-serif;
+            font-weight:normal;
+            font-style:normal;
+            font-size: 6vh;
+            margin: 0 0 0 0;
+            font-weight: bold;
+            text-shadow: 0 0 5px #00b4b4;
+            background-color: rgba(31, 31, 31, 0.5);
+            height:8vh;
+            padding-top: 10px;
+            width:100%;
+        }
+        h2 {
+            color:white;
+            font-family: 'Exo 2', sans-serif;
+            font-weight:normal;
+
+            font-size: 3vh;
+            margin: 0 0 20px 0;
+            font-weight: bold;
+            text-shadow: 0 0 5px #1f1f1f;
+            background-color: rgba(31, 31, 31, 0.5);
+            height:8vh;
+            padding-top: 10px;
+            width:100%;
+        }
+        h3 {
+            font-family: 'Exo 2', sans-serif;
+            border-bottom: 2px solid;
+            border-bottom-color: #00b4b4;
+            padding-bottom: 10px;
+        }
+
+        #nameDisplay {
+            left: 10vh;
+            font-family: 'Exo 2', sans-serif;
+            font-size: 35px;
+            margin: 0px 0 10px 25px;
+        }
+        ul {
+            font-size: 5vh;
+        }
+        li {
+            margin: 0 0 0 0;
+        }
+
+        footer {
+            margin: 1549px 0 0 0;
+            position: absolute;
+            width:100%;
+            z-index: 9999;
+        }
+        #cPanel {
+            margin: 10px 0 40px 0;
+            color: #fff;
+            font-family:'Exo 2', sans-serif;
+            font-weight:normal;
+            font-style:normal;
+            font-size: 15px;
+        }
+        /* unvisited link */
+        a:link {
+            color: white;
+        }
+        /* visited link */
+        a:visited {
+            color: white;
+        }
+        /* mouse over link */
+        a:hover {
+            color: #00b4b4;
+        }
+        /* selected link */
+        a:active {
+            color: #00b4b4;
+        }
+        #exploreLink {
+            margin: 0 0 0 0px;
+            position: relative;
+        }
+        #weather {
+            margin: 63px 0 0 0;
+            position:absolute;
+            width:100%;
+        }
+        #container {
+            margin: 161px 0 0 0;
+            position: absolute;
+            width:100%;
+        }
+        #upperLeft {
+            border: 1px solid;
+        }
+        #upperRight {
+            border: 1px solid;
+        }
+
+        #hop1Pic {
+
+        }
+        #hop2Pic {
+
+        }
+        #hop3Pic {
+
+        }
+        #hop4Pic {
+
+        }
+        .picDiv {
+        margin: 10px 0 5px 0;
+
+        }
+        .info {
+            font-family: 'Exo 2', sans-serif;
+            font-weight:normal;
+            font-size: 3vh;
+            margin: 15px 0 0 15px;
+
+            position: relative ;
+
+        }
 
 
     </style>
 
-    <!-- Materialize's compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <!--*************************************************************************************************************-->
+    <!--*****************************  Materialize Style Sheet & Icon Reference  ************************************-->
+    <!--*************************************************************************************************************-->
+    <!--*************************************************************************************************************-->
+
+
+    <!--jQuery-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
     <!--Needed to use Materialize icons-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+
+
+    <!-- Materialize's version of compiled and minified JavaScript -->
+    <link rel = "stylesheet"
+          href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+
+
+
+
+    <!--*************************************************************************************************************-->
+    <!--************************  Local JavaScript Code that corrects URL after Login  ******************************-->
+    <!--*************************************************************************************************************-->
+    <!--*************************************************************************************************************-->
+    <script type="text/javascript">
+        if (window.location.hash && window.location.hash == '#_=_') {
+            window.location.hash = '';
+        }
+    </script>
+
+
 </head>
 
+<!--*****************************************************************************************************************-->
+<!--***********************************  City Page Content / HTML Body  *********************************************-->
+<!--*****************************************************************************************************************-->
+<!--*****************************************************************************************************************-->
 <body>
 
-<h1>Non-Member City</h1>
+<!--Main Navigation-->
 
-<!-- Materialize's version of compiled and minified JavaScript -->
+    <!--<nav style="background-color: rgba(31,31,31,0.85)">-->
+        <!--<div class="row nav-wrapper " style="background-color: rgba(31,31,31,0.85)">-->
+            <!--<div id="nameDisplay" class="brand-logo"><a href="/">CITY HOP</a></div>-->
+            <!--<a href="#" data-target="" class="sidenav-trigger"><i class="material-icons">menu</i></a>-->
+            <!--<ul class=" hide-on-med-and-down ">-->
+                <!--<li ><a href="#explore">Explore</a></li>-->
+                <!--<li ><a href="/login">Log In</a></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</nav>-->
+
+
+    <nav style="background-color: rgba(31,31,31,0.85)">
+        <div class="nav-wrapper" style="background-color: rgba(31,31,31,0.85)">
+            <div id="nameDisplay" class="brand-logo"><a href="/">CITY HOP</a></div>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li id="exploreLink"><a href="/">Home</a></li>
+                <li id="loginLink"><a href="/login">Log In</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<!--Hamburger Menu Nav-->
+<ul class="sidenav" id="mobile-demo">
+    <li><a href="/">Home</a></li>
+    <li><a href="#content">Explore</a></li>
+    <li><a href="/login">Log In</a></li>
+</ul>
+
+<!--Explore Area Background Image-->
+<img id="explore" class="" src="http://thestrategicfellow.com/wp-content/uploads/2018/05/miami-beach-night-florida.jpg" alt="">
+
+<div id="weather" hidden>
+    <a id="weather2" class="weatherwidget-io" href="https://forecast7.com/en/40d71n74d01/new-york/?unit=us"
+       data-label_1="" data-label_2="WEATHER" data-theme="dark" > </a>
+</div>
+
+<div id="invlCity" hidden>
+    <h1 id="falseCity"></h1><h1> We apologize.  City-Hop</h1>
+</div>
+
+<div id = "container" class="center">
+    <div  class ="row">
+        <div id="upperLeft" class ="col s6 m6 l6">
+            <h4>TRENDING AROUND </h4>
+            <h4 id="cityTrends"></h4>
+
+
+            <ul class="collapsible">
+                <li>
+                    <div id="hop1"class="collapsible-header"><i class="material-icons">location_city</i></div>
+                    <div class="collapsible-body">
+                        <span>
+
+                            <div class="row">
+                                <div class=" col s6 m6 l6 picDiv">
+                                    <a id="picLink1" href="" target="_blank"><img id ="hop1Pic"  src="" width="325px"></a>
+                                </div>
+                                <div id = "" class="col s6 m6 l6 info">
+
+                                        <div><span  id="hop1Add"><i class="material-icons">location_on</i></span></div>
+                                        <div><span  id="hop1Phone"><i class="material-icons">phone</i></span></div>
+                                        <div><span id="hop1Cost"><i class="material-icons">attach_money</i></span></div>
+                                        <span><a id="hop1Site" href="" target="_blank">Visit Website</a></span>
+
+                                </div>
+
+                            </div>
+
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div id="hop2" class="collapsible-header"><i class="material-icons">location_city</i></div>
+                    <div class="collapsible-body"><span>
+                        <span>
+
+                            <div class="row">
+                                <div class="col s6 m6 l6 picDiv">
+                                    <a id="picLink2" href="" target="_blank"><img id ="hop2Pic"  src="" width="325px"></a>
+                                </div>
+                                <div class=" info col s6 m6 l6">
+
+                                        <div><span  id="hop2Add"><i class="material-icons">location_on</i></span></div>
+                                        <div><span  id="hop2Phone"><i class="material-icons">phone</i></span></div>
+                                        <div><span id="hop2Cost"><i class="material-icons">attach_money</i></span></div>
+                                        <span><a id="hop2Site" href="" target="_blank">Visit Website</a></span>
+
+                                </div>
+
+                            </div>
+
+                        </span>
+                    </span></div>
+                </li>
+                <li>
+                    <div id="hop3" class="collapsible-header"><i class="material-icons">location_city</i></div>
+                    <div class="collapsible-body"><span>
+                         <div class="row">
+                                <div class="col s6 m6 l6 picDiv">
+                                    <a id="picLink3" href="" target="_blank"><img id ="hop3Pic"  src="" width="325px"></a>
+                                </div>
+                                <div class=" info col s6 m6 l6">
+
+                                        <div><span  id="hop3Add"><i class="material-icons">location_on</i></span></div>
+                                        <div><span  id="hop3Phone"><i class="material-icons">phone</i></span></div>
+                                        <div><span id="hop3Cost"><i class="material-icons">attach_money</i></span></div>
+                                        <span><a id="hop3Site" href="" target="_blank">Visit Website</a></span>
+
+                                </div>
+
+                            </div>
+                    </span></div>
+                </li>
+                <li>
+                    <div id="hop4" class="collapsible-header"><i class="material-icons">location_city</i></div>
+                    <div class="collapsible-body"><span><div class="row">
+                                <div class="col s6 m6 l6 picDiv">
+                                    <a id="picLink4" href="" target="_blank"><img id ="hop4Pic"  src="" width="325px"></a>
+                                </div>
+                                <div class=" info col s6 m6 l6">
+
+                                        <div><span  id="hop4Add"><i class="material-icons">location_on</i></span></div>
+                                        <div><span  id="hop4Phone"><i class="material-icons">phone</i></span></div>
+                                        <div><span id="hop4Cost"><i class="material-icons">attach_money</i></span></div>
+                                        <span><a id="hop4Site" href="" target="_blank">Visit Website</a></span>
+
+                                </div>
+
+                            </div></span></div>
+                </li>
+            </ul>
+
+
+        </div>
+        <div id="upperRight" class ="col s6 m6 l6">
+            <p>map</p>
+        </div>
+
+    </div>
+    <!--Footer-->
+    <footer id="footer" class="page-footer center " style="background: black;">
+        <div class= right">
+            <p id="cPanel" class="center-align"><a href="#" id="clear"></a><a href="/login">Login</a> | <a href="/api">City Hop API</a> | <a href="https://github.com/TonyScott44/CityHopII">GitHub Repo</a></p>
+        </div>
+    </footer>
+
+</div>
+
+
+
+<!--*****************************************************************************************************************-->
+<!--***************************  JavaScript & jQuery References  ****************************************************-->
+<!--*****************************************************************************************************************-->
+<!--*****************************************************************************************************************-->
+
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.js">
+</script>
+</body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 
-<!--Compiled and minified jQuery-->
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
-</body>
+<!--*****************************************************************************************************************-->
+<!--***************************  Local JavaScript Code  *************************************************************-->
+<!--*****************************************************************************************************************-->
+<!--*****************************************************************************************************************-->
+
+<script type="text/javascript">
+
+    var currentURL = window.location.origin;
+    var city =localStorage.getItem("city").toLowerCase();
+
+
+        var elems = document.querySelectorAll('.collapsible');
+        // var instances = M.Collapsible.init(elems, options);
+        var instance = M.Collapsible.getInstance(elems);
+
+    // Weather Widget Controls
+    !function(d,s,id){
+        var js,fjs=d.getElementsByTagName(s)[0];
+        if(!d.getElementById(id)){js=d.createElement(s);
+        js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';
+        fjs.parentNode.insertBefore(js,fjs);
+        }
+    }
+    (document,'script','weatherwidget-io-js');
+
+
+    $.ajax({url: currentURL + "/api", method: "GET"})
+        .done(function(cityData){
+
+            for (var i = 0; i < cityData.length; i++) {
+                if (city === cityData[i].name) {
+                    $('#weather').show();
+                    $('#weather2').attr('data-label_1',localStorage.getItem("city").toUpperCase());
+                    $('#weather2').attr('href',cityData[i].weatherURL);
+                    $('#cityTrends').append(localStorage.getItem("city").toUpperCase());
+                    $('#hop1').append(cityData[i].cityHop1.name);
+                    $('#hop2').append(cityData[i].cityHop2.name);
+                    $('#hop3').append(cityData[i].cityHop3.name);
+                    $('#hop4').append(cityData[i].cityHop4.name);
+
+
+                    $('#hop1Pic').attr('src',cityData[i].cityHop1.photo);
+                    $('#picLink1').attr('href',cityData[i].cityHop1.photo);
+                    $('#hop1Site').attr('href',cityData[i].cityHop1.site);
+                    $('#hop1Name').append(cityData[i].cityHop1.name);
+                    $('#hop1Add').append(cityData[i].cityHop1.address);
+                    $('#hop1Phone').append(cityData[i].cityHop1.phone);
+                    $('#hop1Cost').append(cityData[i].cityHop1.price);
+
+                    $('#hop2Pic').attr('src',cityData[i].cityHop2.photo);
+                    $('#picLink2').attr('href',cityData[i].cityHop2.photo);
+                    $('#hop2Site').attr('href',cityData[i].cityHop2.site);
+                    $('#hop2Name').append(cityData[i].cityHop2.name);
+                    $('#hop2Add').append(cityData[i].cityHop2.address);
+                    $('#hop2Phone').append(cityData[i].cityHop2.phone);
+                    $('#hop2Cost').append(cityData[i].cityHop2.price);
+
+                    $('#hop3Pic').attr('src',cityData[i].cityHop3.photo);
+                    $('#picLink3').attr('href',cityData[i].cityHop3.photo);
+                    $('#hop3Site').attr('href',cityData[i].cityHop3.site);
+                    $('#hop3Name').append(cityData[i].cityHop3.name);
+                    $('#hop3Add').append(cityData[i].cityHop3.address);
+                    $('#hop3Phone').append(cityData[i].cityHop3.phone);
+                    $('#hop3Cost').append(cityData[i].cityHop3.price);
+
+                    $('#hop4Pic').attr('src',cityData[i].cityHop4.photo);
+                    $('#picLink4').attr('href',cityData[i].cityHop4.photo);
+                    $('#hop4Site').attr('href',cityData[i].cityHop4.site);
+                    $('#hop4Name').append(cityData[i].cityHop4.name);
+                    $('#hop4Add').append(cityData[i].cityHop4.address);
+                    $('#hop4Phone').append(cityData[i].cityHop4.phone);
+                    $('#hop4Cost').append(cityData[i].cityHop4.price);
+                } else {
+
+                    $('#invlCity').show();
+                    $('#falseCity').append(city);
+
+                }
+            }
+
+            console.log(cityData[0]);
+
+            console.log(cityData[0].weatherURL)
+
+
+        });
+
+</script>
+
+
+
+
+<!-- Reference to external JavaScript File -->
+
+<script src="http://localhost:9044/cityhop-js"></script>
 
 </html>

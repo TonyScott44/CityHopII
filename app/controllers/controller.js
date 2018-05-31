@@ -1,6 +1,9 @@
 var passport = require('passport');
 var Strategy = require('passport-facebook').Strategy;
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+// Require Express                                                           //
+// ** Simplifies routing using node.js                                       //
+var express = require('express');                                            //
 
 var path = require('path');
 
@@ -52,15 +55,32 @@ module.exports = function (app) {
     app.get('/city', function(req, res) {
         if (req.user) {
             res.sendFile(path.join(__dirname + '/../public/cityMember.html'));
+            // res.redirect(path.join(__dirname + '/../public/cityMember.html'));
         } else {
             res.sendFile(path.join(__dirname + '/../public/cityNon.html'));
+            // res.redirect(path.join(__dirname + '/../public/cityMember.html'));
         }
 
     });
+
+    app.post('/city',function(req, res) {
+
+        if (req.user) {
+
+            res.sendFile(path.join(__dirname + '/../public/cityMember.html'));
+            // res.redirect('/city');
+        } else {
+            res.sendFile(path.join(__dirname + '/../public/cityNon.html'));
+            // res.redirect('/city');
+        }
+    });
+
 
     app.get('/logout', function(req, res){
         req.logout();
         res.redirect('/');
     });
+
+    app.use("/cityhop-js", express.static(__dirname + '/../public/assets/javascript/logic.js'));
 
 };
