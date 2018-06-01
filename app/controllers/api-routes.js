@@ -1,5 +1,5 @@
 var path = require('path');
-var cityData = require ('../models/api-CityHop');
+var cityData = require ('../data/api-CityHop');
 
 
 module.exports = function (app) {

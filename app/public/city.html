@@ -32,9 +32,9 @@
             position: relative;
         }
         #explore {
-            margin: 74px 0 0 0;
+            margin: 0 0 0 0;
             width:100%;
-            position: absolute;
+            position: fixed;
             height:120vh;
         }
 
@@ -127,6 +127,7 @@
             padding-bottom: 10px;
         }
 
+
         #nameDisplay {
             left: 10vh;
             font-family: 'Exo 2', sans-serif;
@@ -186,6 +187,9 @@
         }
         #upperLeft {
             border: 1px solid;
+            font-family: 'Exo 2', sans-serif;
+            font-weight:normal;
+            font-size: 3vh;
         }
         #upperRight {
             border: 1px solid;
@@ -204,7 +208,7 @@
 
         }
         .picDiv {
-        margin: 10px 0 5px 0;
+            margin: 10px 0 5px 0;
 
         }
         .info {
@@ -215,6 +219,61 @@
 
             position: relative ;
 
+        }
+        .trendingText {
+            font-family: 'Exo 2', sans-serif;
+            font-weight:bold;
+            font-size: 5vh;
+            color: white;
+        }
+        .collapsible-header {
+            font-size: 3vh;
+        }
+        #scrollNote {
+            text-align: center;
+            width: 100%;
+            height: 10vh;
+            position: absolute;
+            top: 90vh;
+            left: 0;
+            z-index: 99;
+            background-color: rgba(31, 31, 31, 0.85);
+        }
+        .scroll-downs {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+
+            width :34px;
+            height: 55px;
+        }
+        .mousey {
+            width: .3vh;
+            padding: 10px 15px;
+            height: 4.5vh;
+            border: 2px solid #fafafa;
+            border-radius: 25px;
+            opacity: 0.75;
+            box-sizing: content-box;
+
+        }
+        .scroller {
+            width: 3px;
+            height: 10px;
+            border-radius: 25%;
+            background-color: #fafafa;
+            animation-name: scroll;
+            animation-duration: 2.2s;
+            animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+            animation-iteration-count: infinite;
+            background-color: rgba(0, 180, 180, 0.7);
+        }
+
+        .card-content {
+            margin: 200px 0 0 0;
         }
 
 
@@ -262,27 +321,27 @@
 
 <!--Main Navigation-->
 
-    <!--<nav style="background-color: rgba(31,31,31,0.85)">-->
-        <!--<div class="row nav-wrapper " style="background-color: rgba(31,31,31,0.85)">-->
-            <!--<div id="nameDisplay" class="brand-logo"><a href="/">CITY HOP</a></div>-->
-            <!--<a href="#" data-target="" class="sidenav-trigger"><i class="material-icons">menu</i></a>-->
-            <!--<ul class=" hide-on-med-and-down ">-->
-                <!--<li ><a href="#explore">Explore</a></li>-->
-                <!--<li ><a href="/login">Log In</a></li>-->
-            <!--</ul>-->
-        <!--</div>-->
-    <!--</nav>-->
+<!--<nav style="background-color: rgba(31,31,31,0.85)">-->
+<!--<div class="row nav-wrapper " style="background-color: rgba(31,31,31,0.85)">-->
+<!--<div id="nameDisplay" class="brand-logo"><a href="/">CITY HOP</a></div>-->
+<!--<a href="#" data-target="" class="sidenav-trigger"><i class="material-icons">menu</i></a>-->
+<!--<ul class=" hide-on-med-and-down ">-->
+<!--<li ><a href="#explore">Explore</a></li>-->
+<!--<li ><a href="/login">Log In</a></li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</nav>-->
 
 
-    <nav style="background-color: rgba(31,31,31,0.85)">
-        <div class="nav-wrapper" style="background-color: rgba(31,31,31,0.85)">
-            <div id="nameDisplay" class="brand-logo"><a href="/">CITY HOP</a></div>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li id="exploreLink"><a href="/">Home</a></li>
-                <li id="loginLink"><a href="/login">Log In</a></li>
-            </ul>
-        </div>
-    </nav>
+<nav style="background-color: rgba(31,31,31,0.65)">
+    <div class="nav-wrapper" style="background-color: rgba(31,31,31,0.85)">
+        <div id="nameDisplay" class="brand-logo"><a href="/">CITY HOP</a></div>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li id="exploreLink"><a href="/">Home</a></li>
+            <li id="loginLink"><a href="/login">Log In</a></li>
+        </ul>
+    </div>
+</nav>
 
 <!--Hamburger Menu Nav-->
 <ul class="sidenav" id="mobile-demo">
@@ -291,8 +350,18 @@
     <li><a href="/login">Log In</a></li>
 </ul>
 
+<!--Scroll/Mouse Animation-->
+<div id="scrollNote" class="center">
+
+    <div class="scroll-downs">
+        <div class="mousey">
+            <div class="scroller"></div>
+        </div>
+    </div>
+    <p id="scrollText" style="color: white;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Scroll down to &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;purchase a City Package</p>
+</div> <!--End Scroll Animation-->
 <!--Explore Area Background Image-->
-<img id="explore" class="" src="http://thestrategicfellow.com/wp-content/uploads/2018/05/miami-beach-night-florida.jpg" alt="">
+<img id="explore" class="" src="" alt="">
 
 <div id="weather" hidden>
     <a id="weather2" class="weatherwidget-io" href="https://forecast7.com/en/40d71n74d01/new-york/?unit=us"
@@ -303,17 +372,17 @@
     <h1 id="falseCity"></h1><h1> We apologize.  City-Hop</h1>
 </div>
 
-<div id = "container" class="center">
+<div id = "container" class="center" >
     <div  class ="row">
-        <div id="upperLeft" class ="col s6 m6 l6">
-            <h4>TRENDING AROUND </h4>
-            <h4 id="cityTrends"></h4>
+        <div id="upperLeft" class ="col s6 m6 l6" style="background: rgba(31,31,31,0.75);" >
+            <h4 class="trendingText">TRENDING AROUND </h4>
+            <h4 id="cityTrends" class="trendingText"></h4>
 
 
-            <ul class="collapsible">
+            <ul class="collapsible" style="background: rgba(31,31,31,0.45);" >
                 <li>
-                    <div id="hop1"class="collapsible-header"><i class="material-icons">location_city</i></div>
-                    <div class="collapsible-body">
+                    <div id="hop1"class="collapsible-header" style="background: rgba(31,31,31,0.75); color: white"><i class="material-icons">location_city</i></div>
+                    <div class="collapsible-body" style="background: black; color:white;">
                         <span>
 
                             <div class="row">
@@ -335,8 +404,8 @@
                     </div>
                 </li>
                 <li>
-                    <div id="hop2" class="collapsible-header"><i class="material-icons">location_city</i></div>
-                    <div class="collapsible-body"><span>
+                    <div id="hop2" class="collapsible-header" style="background: rgba(31,31,31,0.75); color: white"><i class="material-icons">location_city</i></div>
+                    <div class="collapsible-body" style="background: black; color:white;"><span>
                         <span>
 
                             <div class="row">
@@ -358,13 +427,13 @@
                     </span></div>
                 </li>
                 <li>
-                    <div id="hop3" class="collapsible-header"><i class="material-icons">location_city</i></div>
-                    <div class="collapsible-body"><span>
+                    <div id="hop3" class="collapsible-header" style="background: rgba(31,31,31,0.75); color: white"><i class="material-icons">location_city</i></div>
+                    <div class="collapsible-body" style="background: black; color:white;"><span>
                          <div class="row">
                                 <div class="col s6 m6 l6 picDiv">
                                     <a id="picLink3" href="" target="_blank"><img id ="hop3Pic"  src="" width="325px"></a>
                                 </div>
-                                <div class=" info col s6 m6 l6">
+                                <div class=" info col s6 m6 l6" >
 
                                         <div><span  id="hop3Add"><i class="material-icons">location_on</i></span></div>
                                         <div><span  id="hop3Phone"><i class="material-icons">phone</i></span></div>
@@ -377,8 +446,9 @@
                     </span></div>
                 </li>
                 <li>
-                    <div id="hop4" class="collapsible-header"><i class="material-icons">location_city</i></div>
-                    <div class="collapsible-body"><span><div class="row">
+                    <div id="hop4" class="collapsible-header" style="background: rgba(31,31,31,0.75); color: white"><i class="material-icons">location_city</i></div>
+                    <div class="collapsible-body" style="background: black; color:white;"><span>
+                        <div class="row">
                                 <div class="col s6 m6 l6 picDiv">
                                     <a id="picLink4" href="" target="_blank"><img id ="hop4Pic"  src="" width="325px"></a>
                                 </div>
@@ -390,18 +460,113 @@
                                         <span><a id="hop4Site" href="" target="_blank">Visit Website</a></span>
 
                                 </div>
-
-                            </div></span></div>
+                    </div>
+                    </span>
+                    </div>
                 </li>
             </ul>
 
 
         </div>
-        <div id="upperRight" class ="col s6 m6 l6">
+        <div id="upperRight" class ="col s6 m6 l6" style="background: rgba(31,31,31,0.45);">
             <p>map</p>
         </div>
 
+
+
     </div>
+
+
+    <div  id="machotron1 " class=" container col s12 m12">
+        <div  class="card  ">
+            <div  class="card-content " style="background: black; color:white;">
+                <!--<div class="card-title">Table Reservation</div>-->
+                <div class="card-body">
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">person_add</i>
+                            <input id="name" type="text" class="validate">
+                            <label for="name">Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">person_add</i>
+                            <input id="lastName" type="text" class="validate">
+                            <label for="lastName">Last Name</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">email</i>
+                            <input id="email" type="email" class="validate">
+                            <label for="email">Email</label>
+                            <span class="helper-text" data-error="wrong" data-success="right"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div  class="input-field col s12">
+                            <select multiple id="hopSelect">
+                                <option value="" disabled selected>Create your package or select a la carte.</option>
+                                <option id="buyHop1" value="" style="background: rgba(31,31,31,0.75); color: white"></option>
+                                <option id="buyHop2" value="" style="background: rgba(31,31,31,0.75); color: white"></option>
+                                <option id="buyHop3" value="" style="background: rgba(31,31,31,0.75); color: white"></option>
+                                <option id="buyHop4" value="" style="background: rgba(31,31,31,0.75); color: white"></option>
+                            </select>
+                            <label>Hop Selector</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12 ">
+                            <i class="material-icons prefix ">payment</i>
+                            <input id="ccNum" type="text" class="validate ">
+                            <label for="ccNum">Credit Card Number</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">today</i>
+                            <input id="expDate" type="text" class="validate">
+                            <label for="expDate">Exp. Date</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">enhanced_encryption</i>
+                            <input id="secCode" type="text" class="validate">
+                            <label for="secCode">Security Code</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">markunread_mailbox</i>
+                            <input id="address" type="text" class="validate">
+                            <label for="address">Billing Address</label>
+                        </div>
+
+                        <form action="/jetLounge" method="get">
+                            <button id="submit" class="btn waves-effect waves-light" type="submit" name="action" style="background: #009191;" onclick="click()">Submit Order
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
     <!--Footer-->
     <footer id="footer" class="page-footer center " style="background: black;">
         <div class= right">
@@ -434,17 +599,57 @@
     var currentURL = window.location.origin;
     var city =localStorage.getItem("city").toLowerCase();
 
+    var elems = document.querySelectorAll('.collapsible');
+    var instance = M.Collapsible.getInstance(elems);
 
-        var elems = document.querySelectorAll('.collapsible');
-        // var instances = M.Collapsible.init(elems, options);
-        var instance = M.Collapsible.getInstance(elems);
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var element = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(element);
+    });
+
+    $("#submit").on("click", function() {
+
+        var currentURL = window.location.origin;
+
+        var ordName = $('#name').val();
+        var ordLast = $('#lastName').val();
+        var ordEmail = $('#email').val();
+        var ordCC = $('#ccNum').val();
+        var ordExpDte = $('#expDate').val();
+        var ordSecCde = $('#secCode').val();
+        var ordAdd = $('#address').val();
+        var ordPkge = $('#hopSelect :selected').text(", ");
+        var orderTotal = 0;
+
+        console.log(ordName);
+        console.log(ordLast);
+        console.log(ordEmail);
+        console.log(ordCC);
+        console.log(ordExpDte);
+        console.log(ordSecCde);
+        console.log(ordAdd);
+        console.log(ordPkge);
+
+        console.log(ordPkge[0].value);
+        console.log(ordPkge[1].value);
+        console.log(ordPkge[2].value);
+        console.log(ordPkge[3].value);
+
+        for (var x = 0; x < ordPkge.length; x++) {
+            orderTotal = +orderTotal + +ordPkge[x].value;
+        }
+
+        console.log(orderTotal);
+    });
+
 
     // Weather Widget Controls
     !function(d,s,id){
         var js,fjs=d.getElementsByTagName(s)[0];
         if(!d.getElementById(id)){js=d.createElement(s);
-        js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';
-        fjs.parentNode.insertBefore(js,fjs);
+            js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';
+            fjs.parentNode.insertBefore(js,fjs);
         }
     }
     (document,'script','weatherwidget-io-js');
@@ -463,6 +668,7 @@
                     $('#hop2').append(cityData[i].cityHop2.name);
                     $('#hop3').append(cityData[i].cityHop3.name);
                     $('#hop4').append(cityData[i].cityHop4.name);
+                    $('#explore').attr('src', cityData[i].cityBG);
 
 
                     $('#hop1Pic').attr('src',cityData[i].cityHop1.photo);
@@ -472,6 +678,9 @@
                     $('#hop1Add').append(cityData[i].cityHop1.address);
                     $('#hop1Phone').append(cityData[i].cityHop1.phone);
                     $('#hop1Cost').append(cityData[i].cityHop1.price);
+                    $('#buyHop1').attr('value',cityData[i].cityHop1.price);
+                    $('#buyHop1').append(cityData[i].cityHop1.name);
+
 
                     $('#hop2Pic').attr('src',cityData[i].cityHop2.photo);
                     $('#picLink2').attr('href',cityData[i].cityHop2.photo);
@@ -480,6 +689,8 @@
                     $('#hop2Add').append(cityData[i].cityHop2.address);
                     $('#hop2Phone').append(cityData[i].cityHop2.phone);
                     $('#hop2Cost').append(cityData[i].cityHop2.price);
+                    $('#buyHop2').attr('value',cityData[i].cityHop2.price);
+                    $('#buyHop2').append(cityData[i].cityHop2.name);
 
                     $('#hop3Pic').attr('src',cityData[i].cityHop3.photo);
                     $('#picLink3').attr('href',cityData[i].cityHop3.photo);
@@ -488,6 +699,8 @@
                     $('#hop3Add').append(cityData[i].cityHop3.address);
                     $('#hop3Phone').append(cityData[i].cityHop3.phone);
                     $('#hop3Cost').append(cityData[i].cityHop3.price);
+                    $('#buyHop3').attr('value',cityData[i].cityHop3.price);
+                    $('#buyHop3').append(cityData[i].cityHop3.name);
 
                     $('#hop4Pic').attr('src',cityData[i].cityHop4.photo);
                     $('#picLink4').attr('href',cityData[i].cityHop4.photo);
@@ -496,6 +709,8 @@
                     $('#hop4Add').append(cityData[i].cityHop4.address);
                     $('#hop4Phone').append(cityData[i].cityHop4.phone);
                     $('#hop4Cost').append(cityData[i].cityHop4.price);
+                    $('#buyHop4').attr('value',cityData[i].cityHop4.price);
+                    $('#buyHop4').append(cityData[i].cityHop4.name);
                 } else {
 
                     $('#invlCity').show();
@@ -504,9 +719,6 @@
                 }
             }
 
-            console.log(cityData[0]);
-
-            console.log(cityData[0].weatherURL)
 
 
         });

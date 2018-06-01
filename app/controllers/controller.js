@@ -53,26 +53,21 @@ module.exports = function (app) {
         }
     });
     app.get('/city', function(req, res) {
-        if (req.user) {
-            res.sendFile(path.join(__dirname + '/../public/cityMember.html'));
-            // res.redirect(path.join(__dirname + '/../public/cityMember.html'));
-        } else {
-            res.sendFile(path.join(__dirname + '/../public/cityNon.html'));
-            // res.redirect(path.join(__dirname + '/../public/cityMember.html'));
-        }
+
+        res.sendFile(path.join(__dirname + '/../public/city.html'));
 
     });
 
     app.post('/city',function(req, res) {
 
-        if (req.user) {
+        res.sendFile(path.join(__dirname + '/../public/city.html'));
 
-            res.sendFile(path.join(__dirname + '/../public/cityMember.html'));
-            // res.redirect('/city');
-        } else {
-            res.sendFile(path.join(__dirname + '/../public/cityNon.html'));
-            // res.redirect('/city');
-        }
+    });
+
+    app.get('/jetlounge', function(req, res) {
+
+        res.sendFile(path.join(__dirname + '/../public/jetLounge.html'));
+
     });
 
 

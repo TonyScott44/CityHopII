@@ -385,7 +385,7 @@
                     </div> <!--End search area-->
                 </div> <!--End Machotron-->
                 <br>
-                <!--Explore Area Background Image-->
+                <!--Explore Area Packground Image-->
                 <img id="explore" class="" src="http://thestrategicfellow.com/wp-content/uploads/2018/05/miami-beach-night-florida.jpg" alt="">
             </div> <!--End row w/ Machotron-->
 
@@ -415,6 +415,8 @@
 
         var currentURL = window.location.origin;
 
+        localStorage.setItem("city", $("#citySearch").val());
+        localStorage.setItem("web", $("#citySearch").val());
         localStorage.setItem("city", $("#citySearch").val());
         console.log(localStorage.getItem("city"));
 

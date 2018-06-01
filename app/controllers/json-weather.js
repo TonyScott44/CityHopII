@@ -1,5 +1,5 @@
 var path = require('path');
-var weatherData = require ('../models/api-weather');
+var weatherData = require ('../data/api-weather');
 
 
 module.exports = function (app) {

@@ -62,7 +62,8 @@ var cityArray = [
         pubTrans: "http://www.itsmarta.com/",
         airport:{ name: "Hartsfield–Jackson Atlanta International Airport",
             site: "http://www.atl.com/"},
-        weatherURL:"https://forecast7.com/en/33d75n84d39/atlanta/?unit=us"
+        weatherURL:"https://forecast7.com/en/33d75n84d39/atlanta/?unit=us",
+        cityBG: "http://thestrategicfellow.com/wp-content/uploads/2018/06/atl.jpg"
 
     }
 ]
