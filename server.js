@@ -3,6 +3,8 @@
 // Require Body Parser                                                       //
 // **** Allows us to receive our information back in JSON                    //
 //      to make the data easy to manipulate.                                 //
+
+require('dotenv').config();
 var bodyParser = require('body-parser');                                     //
 //---------------------------------------------------------------------------//
 // Require Express                                                           //
@@ -15,8 +17,6 @@ var path = require('path');                                                  //
 //---------------------------------------------------------------------------//
 // Make the Express function easy to call                                    //
 var app = express();                                                         //
-
-
 
 
 //---------------------------------------------------------------------------//
