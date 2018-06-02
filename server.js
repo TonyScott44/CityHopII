@@ -11,7 +11,10 @@ var express = require('express');                                            //
 //---------------------------------------------------------------------------//
 // Path (built into node/no need to install)                                 //
 // Allows url CRUD                                                           //
-var path = require('path');                                                  //
+var path = require('path');      
+
+var db = require('./app/models');
+//
 //---------------------------------------------------------------------------//
 // Make the Express function easy to call                                    //
 var app = express();                                                         //
@@ -32,7 +35,8 @@ app.use(bodyParser.urlencoded({ extended: true })) ;                        //
 app.use(bodyParser.json());                                                  //
                                                                              //
 //---------------------------------------------------------------------------//
-app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
+//app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
+app.use(express.static("public"));
 
 //***************************************************************************//
 //             ** Controller/Routing File References **                      //
@@ -53,7 +57,10 @@ require('./app/config/login.js')(app);                                       //
 //***************************************************************************//
 //             **                         **                                 //
 //***************************************************************************//
-app.listen(PORT, function(){                                                 //
-    console.log("App listening on PORT: " + PORT);                           //
-});                                                                          //
+db.sequelize.sync({force: true}).then( function(){
+    app.listen(PORT, function(){                                                 //
+        console.log("App listening on PORT: " + PORT);                           //
+    });  
+});
+                                                                        //
 //---------------------------------------------------------------------------//

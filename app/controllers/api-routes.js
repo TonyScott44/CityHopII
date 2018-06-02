@@ -10,7 +10,9 @@ module.exports = function (app) {
 
 
       app.get("/api/Cityhopuser", function(req, res) {
+          console.log(req.body);
            db.Cityhopuser.findAll({}).then(function(dbCityhopuser) {
+               console.log(dbCityhopuser);
           // We have access to the Cityhopusers as an argument inside of the callback function
           res.json(dbCityhopuser);
         });
