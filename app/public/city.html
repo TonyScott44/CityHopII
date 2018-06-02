@@ -469,12 +469,31 @@
 
         </div>
         <div id="upperRight" class ="col s6 m6 l6" style="background: rgba(31,31,31,0.45);">
-            <p>map</p>
+            <p id="maps" style="height:300px">map</p>
+            <p id="user-area" style="height:300px">
+
+                <table class="table" id="users">
+
+                    <!--Table Head-->
+                    <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>email</th>
+                        <th>Hops</th>
+                        <th>Order Time</th>
+    
+                    </tr>
+                    </thead>
+    
+                    <!--Table Body-->
+                    <tbody> </tbody>
+    
+                </table>
+            </p>
         </div>
 
-
-
-    </div>
+     </div>
 
 
     <div  id="machotron1 " class=" container col s12 m12">
@@ -548,7 +567,7 @@
                             <label for="address">Billing Address</label>
                         </div>
 
-                        <form action="/jetLounge" method="get">
+                        <form>
                             <button id="submit" class="btn waves-effect waves-light" type="submit" name="action" style="background: #009191;" onclick="click()">Submit Order
                                 <i class="material-icons right">send</i>
                             </button>
@@ -569,7 +588,7 @@
 
     <!--Footer-->
     <footer id="footer" class="page-footer center " style="background: black;">
-        <div class= right">
+        <div class= "right">
             <p id="cPanel" class="center-align"><a href="#" id="clear"></a><a href="/login">Login</a> | <a href="/api">City Hop API</a> | <a href="https://github.com/TonyScott44/CityHopII">GitHub Repo</a></p>
         </div>
     </footer>
@@ -606,41 +625,6 @@
     document.addEventListener('DOMContentLoaded', function() {
         var element = document.querySelectorAll('select');
         var instances = M.FormSelect.init(element);
-    });
-
-    $("#submit").on("click", function() {
-
-        var currentURL = window.location.origin;
-
-        var ordName = $('#name').val();
-        var ordLast = $('#lastName').val();
-        var ordEmail = $('#email').val();
-        var ordCC = $('#ccNum').val();
-        var ordExpDte = $('#expDate').val();
-        var ordSecCde = $('#secCode').val();
-        var ordAdd = $('#address').val();
-        var ordPkge = $('#hopSelect :selected').text(", ");
-        var orderTotal = 0;
-
-        console.log(ordName);
-        console.log(ordLast);
-        console.log(ordEmail);
-        console.log(ordCC);
-        console.log(ordExpDte);
-        console.log(ordSecCde);
-        console.log(ordAdd);
-        console.log(ordPkge);
-
-        console.log(ordPkge[0].value);
-        console.log(ordPkge[1].value);
-        console.log(ordPkge[2].value);
-        console.log(ordPkge[3].value);
-
-        for (var x = 0; x < ordPkge.length; x++) {
-            orderTotal = +orderTotal + +ordPkge[x].value;
-        }
-
-        console.log(orderTotal);
     });
 
 
@@ -723,6 +707,108 @@
 
         });
 
+
+
+var vlat = 33.8273952;
+var vlng = -84.466407;
+var vzoom = 3;
+var city = { name: ["atl","mia","nyc","chg","los"],
+    lat:[33.8273952,25.761680,40.6971494,41.85,34.0201613],
+    lang:[-84.466407,-80.191790,-74.2598712, -87.64999999999998,-118.3919267]
+};
+
+
+
+$(document).on("click", ".collapsible-header", function()
+{ event.preventDefault();
+    
+    var blat = 33.8273952;
+    var blng = -84.466407;
+
+    $.ajax({url: currentURL + "/api", method: "GET"})
+        .done(function(cityData){
+
+            for (var i = 0; i < cityData.length; i++) {
+                if (city === cityData[i].name) {
+                    blat = cityData[i].cityHop2.gps.lat;
+                    blng = cityData[i].cityHop2.gps.lon;
+                }
+            }
+
+        });
+
+    var map = new google.maps.Map(document.getElementById('maps'), {
+        zoom: 14,
+        center: {lat: blat, lng: blng} //33.8273952,-84.466407
+    });
+
+    var marker = new google.maps.Marker({
+        position: {lat: blat, lng: blng},
+        map: map
+    });
+
+  $.get("/api/Cityhopuser", function(data) {
+
+     for (var i = 0; i < data.length; i++) {
+
+        $("#users").append("<tr> <td> " + data[i].firstName +
+            " </td><td> " + data[i].lastName +
+            " </td><td> " + data[i].email +
+            " </td> <td> " + data[i].hops +
+            " </td> <td> " + data[i].orderTotal + " </td> </tr>");
+
+   }
+
+   });
+
+ });
+
+
+$("#submit").on("click", function() {
+
+    //var currentURL = window.location.origin;
+
+    var newCityhopuser = {
+    
+    firstName: $('#name').val(),
+    lastName: $('#lastName').val(),
+    email: $('#email').val(),
+    CC: $('#ccNum').val(),
+    expDte: $('#expDate').val(),
+    secCde: $('#secCode').val(),
+    address: $('#address').val(),
+    hops: $('#hopSelect :selected').text(", "),
+    orderTotal: function(){ 
+                   var orderTotal; 
+                   for (var x = 0; x < ordPkge.length; x++) {
+                   orderTotal = +orderTotal + +ordPkge[x].value;
+                   }
+                   return orderTotal;
+                 },
+    //created_at: moment().format("YYYY-MM-DD HH:mm:ss")
+  };
+   
+    console.log(newCityhopuser.firstName);
+    console.log(newCityhopuser.lastName);
+    console.log(newCityhopuser.ordAdd);
+    console.log(newCityhopuser.ordPkge);
+    console.log(newCityhopuser.orderTotal);
+
+$.post("api/Cityhopuser", newCityhopuser)
+        .then(function() {
+
+
+        $("#users").append("<tr> <td> " + newCityhopuser.firstName +
+        " </td><td> " + newCityhopuser.lastName +
+        " </td><td> " + newCityhopuser.email +
+        " </td> <td> " + newCityhopuser.hops +
+        " </td> <td> " + newCityhopuser.orderTotal + " </td> </tr>");
+
+    });
+
+
+});
+
 </script>
 
 
@@ -730,6 +816,10 @@
 
 <!-- Reference to external JavaScript File -->
 
-<script src="http://localhost:9044/cityhop-js"></script>
+<script></script>
+
+<!-- Reference to Google Maps API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-b8rIC0nONATt56H52WbPaU1TsMB3Gng"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 </html>
