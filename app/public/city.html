@@ -181,7 +181,7 @@
             width:100%;
         }
         #container {
-            margin: 161px 0 0 0;
+
             position: absolute;
             width:100%;
         }
@@ -190,9 +190,14 @@
             font-family: 'Exo 2', sans-serif;
             font-weight:normal;
             font-size: 3vh;
+            margin: 30px 20px 0 30px;
+            height:370px;
         }
         #upperRight {
             border: 1px solid;
+            margin: 30px 30px 0 20px;
+            width:530px;
+            height:370px;
         }
 
         #hop1Pic {
@@ -276,6 +281,11 @@
             margin: 200px 0 0 0;
         }
 
+        #maps {
+            margin: 15px 15px 15px 15px;
+            height:300px;
+        }
+
 
     </style>
 
@@ -284,7 +294,7 @@
     <!--*************************************************************************************************************-->
     <!--*************************************************************************************************************-->
 
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-b8rIC0nONATt56H52WbPaU1TsMB3Gng"></script>
     <!--jQuery-->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
@@ -469,7 +479,7 @@
 
         </div>
         <div id="upperRight" class ="col s6 m6 l6" style="background: rgba(31,31,31,0.45);">
-            <p>map</p>
+            <div id="maps"></div>
         </div>
 
 
@@ -601,6 +611,7 @@
 
     var elems = document.querySelectorAll('.collapsible');
     var instance = M.Collapsible.getInstance(elems);
+    var x = 0;
 
 
     document.addEventListener('DOMContentLoaded', function() {
@@ -658,8 +669,23 @@
     $.ajax({url: currentURL + "/api", method: "GET"})
         .done(function(cityData){
 
+
+            var blat = 33.7756178;
+            var blng = -84.39628499999998;
+            var map = new google.maps.Map(document.getElementById('maps'), {
+                zoom: 14,
+                center: {lat: blat, lng: blng}
+            });
+            var marker = new google.maps.Marker({
+                position: {lat: blat, lng: blng},
+                map: map
+            });
+
+
             for (var i = 0; i < cityData.length; i++) {
                 if (city === cityData[i].name) {
+
+                    x = i;
                     $('#weather').show();
                     $('#weather2').attr('data-label_1',localStorage.getItem("city").toUpperCase());
                     $('#weather2').attr('href',cityData[i].weatherURL);
@@ -719,7 +745,80 @@
                 }
             }
 
+        });
 
+    $.ajax({url: currentURL + "/api", method: "GET"})
+        .done(function(cityData){
+
+    $("#hop1").on("click", function() {
+
+        blat = cityData[x].cityHop1.gps.lat;
+        blng = cityData[x].cityHop1.gps.lon;
+        console.log(blat);
+        console.log(blng);
+        var map = new google.maps.Map(document.getElementById('maps'), {
+            zoom: 14,
+            center: {lat: blat, lng: blng}
+        });
+        var marker = new google.maps.Marker({
+            position: {lat: blat, lng: blng},
+            map: map
+        });
+
+    });
+    $("#hop2").on("click", function() {
+
+
+        blat = cityData[x].cityHop2.gps.lat;
+        blng = cityData[x].cityHop2.gps.lon;
+        console.log(blat);
+        console.log(blng);
+        var map = new google.maps.Map(document.getElementById('maps'), {
+            zoom: 14,
+            center: {lat: blat, lng: blng}
+        });
+        var marker = new google.maps.Marker({
+            position: {lat: blat, lng: blng},
+            map: map
+        });
+
+
+
+    });
+    $("#hop3").on("click", function() {
+
+        blat = cityData[x].cityHop3.gps.lat;
+        blng = cityData[x].cityHop3.gps.lon;
+        console.log(blat);
+        console.log(blng);
+        var map = new google.maps.Map(document.getElementById('maps'), {
+            zoom: 14,
+            center: {lat: blat, lng: blng}
+        });
+        var marker = new google.maps.Marker({
+            position: {lat: blat, lng: blng},
+            map: map
+        });
+
+
+
+    });
+    $("#hop4").on("click", function() {
+
+        blat = cityData[x].cityHop4.gps.lat;
+        blng = cityData[x].cityHop4.gps.lon;
+        console.log(blat);
+        console.log(blng);
+        var map = new google.maps.Map(document.getElementById('maps'), {
+            zoom: 14,
+            center: {lat: blat, lng: blng}
+        });
+        var marker = new google.maps.Marker({
+            position: {lat: blat, lng: blng},
+            map: map
+        });
+
+    });
 
         });
 

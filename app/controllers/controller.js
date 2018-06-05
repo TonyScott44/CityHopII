@@ -39,11 +39,8 @@ module.exports = function (app) {
 
     app.get('/', function(req, res) {
 
-        if (req.user) {
-            res.sendFile(path.join(__dirname + '/../public/memHome.html'));
-        } else {
             res.sendFile(path.join(__dirname + '/../public/home.html'));
-        }
+
     });
     app.get('/login', function(req, res) {
         if (req.user) {
