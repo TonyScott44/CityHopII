@@ -6,12 +6,289 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title></title>
+    <title>CityHop Login</title>
     <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Exo+2:100" rel="stylesheet">
+
     <link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
+    
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100" rel="stylesheet">
+
+    <link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
 
     <!--Local Styling-->
     <style>
+     body {
+    width:100px;
+	height:100px;
+    /* position: relative; */
+
+  background: -webkit-linear-gradient(90deg, #16222A 10%, #3A6073 90%); Chrome 10+, Saf5.1+
+  background:    -moz-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* W3C */
+font-family: 'Raleway', sans-serif;
+}
+
+#hero-vid {
+    /*backface-visibility: hidden;*/
+    background-color: white;
+    background-size: cover;
+    bottom: 0;
+    min-height: 100%;
+    min-width: 100%;
+    position: fixed;
+    right: 0;
+    width: auto;
+    z-index: -1;
+}
+#explore {
+    margin: 74px 0 0 0;
+    width:100%;
+    height:120vh;
+}
+#state {
+    bottom:0;
+    cursor:pointer;
+    font-size:2.25rem;
+    left:0;
+    line-height:1;
+    padding:2rem 2.5rem 1.65rem;
+    /*position:absolute;*/
+}
+#overlay {
+    background-color:rgba(0,0,0,.60);
+    height:100%;
+    left:0;
+    position:relative;
+    top:0;
+    bottom: 0;
+    transition:background-color 300ms ease;
+    width:100%;
+}
+#cityLogo {
+    width: 30vh;
+    height: 55vh;
+    margin-top: 20vh;
+    padding: 0 0 0 0;
+}
+#scrollNote {
+    text-align: center;
+    width: 100%;
+    height: 10vh;
+    position: absolute;
+    top: 90vh;
+    left: 0;
+    z-index: 99;
+    background-color: rgba(31, 31, 31, 0.85);
+}
+.scroll-downs {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+
+    width :34px;
+    height: 55px;
+}
+.mousey {
+    width: .3vh;
+    padding: 10px 15px;
+    height: 4.5vh;
+    border: 2px solid #fafafa;
+    border-radius: 25px;
+    opacity: 0.75;
+    box-sizing: content-box;
+
+}
+.scroller {
+    width: 3px;
+    height: 10px;
+    border-radius: 25%;
+    background-color: #fafafa;
+    animation-name: scroll;
+    animation-duration: 2.2s;
+    animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+    animation-iteration-count: infinite;
+    background-color: rgba(0, 180, 180, 0.7);
+}
+@keyframes scroll {
+    0% { opacity: 0; }
+    10% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(15px); opacity: 0;}
+}
+nav {
+    color: #fff;
+    font-family:'ABeeZee';
+    font-weight:normal;
+    font-style:normal;
+    font-size: 6vh;
+    width: 50px;
+    height: 100%;
+    line-height: 56px;
+    position: fixed;
+    z-index: 600;
+    margin: 0 0 0 0 ;
+}
+#navi {
+    width:100vh;
+}
+.sidenav {
+    position: absolute;
+    width: 180px;
+    left: 0;
+    top: 0;
+    margin: 0;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    height: 100%;
+    height: calc(100% + 60px);
+    height: -moz-calc(100%);
+    padding-bottom: 60px;
+    background-color: rgba(222, 222, 222, 0.45);
+    z-index: 999;
+    overflow-y: auto;
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateX(-105%);
+    transform: translateX(-105%);
+}
+#machotron1 {
+     border-radius: 25px;
+     margin: 220px 0 0 60px;
+     border: 1px solid;
+     padding: 0 20px 60px 20px;
+     background-color: rgba(31, 31, 31, .9);
+     color: white;
+     position: absolute;
+     z-index: 500;
+ }
+p{
+    font-family: 'Work Sans', sans-serif;
+    font-size: 19px;
+    letter-spacing: 1px;
+}
+h1 {
+    color:white;
+    font-family: 'Exo 2', sans-serif;
+    font-weight:normal;
+    font-style:normal;
+    font-size: 6vh;
+    margin: 0 0 0 0;
+    font-weight: bold;
+    text-shadow: 0 0 5px #00b4b4;
+    background-color: rgba(31, 31, 31, 0.5);
+    height:8vh;
+    padding-top: 10px;
+    width:100%;
+}
+h2 {
+    color:white;
+    font-family: 'Exo 2', sans-serif;
+    font-weight:normal;
+
+    font-size: 3vh;
+    margin: 0 0 20px 0;
+    font-weight: bold;
+    text-shadow: 0 0 5px #1f1f1f;
+    background-color: rgba(31, 31, 31, 0.5);
+    height:8vh;
+    padding-top: 10px;
+    width:100%;
+}
+h3 {
+    font-family: 'Exo 2', sans-serif;
+    border-bottom: 2px solid;
+    border-bottom-color: #00b4b4;
+    padding-bottom: 10px;
+}
+#searchArea {
+    font-family: 'Exo 2', sans-serif;
+    border: 2px solid;
+    border-color: #00b4b4;
+    border-radius: 25px;
+    background-color: rgba(122, 122, 122, 0.3);
+    margin: 0 40px 0 40px;
+}
+#searchTitle {
+    font-size: 40px;
+    border:none;
+}
+#searchBox {
+    margin: 0 80px 0 80px;
+}
+#submit {
+    margin: 0 0 30px 0;
+}
+#nameDisplay {
+    left: 10vh;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 35px;
+    margin: 0px 0 10px 25px;
+}
+ul {
+    font-size: 5vh;
+}
+li {
+    margin: 0 0 0 0;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width:100%;
+    z-index: 9999;
+}
+#cPanel {
+    margin: 10px 0 40px 0;
+    color: #fff;
+    font-family:'Exo 2', sans-serif;
+    font-weight:normal;
+    font-style:normal;
+    font-size: 15px;
+}
+/* unvisited link */
+a:link {
+    color: white;
+}
+/* visited link */
+a:visited {
+    color: white;
+}
+/* mouse over link */
+a:hover {
+    color: #00b4b4;
+}
+/* selected link */
+a:active {
+    color: #00b4b4;
+}
+#exploreLink {
+   margin: 0 0 0 380px;
+}
+
+.spacing {
+	padding-top:7px;
+	padding-bottom:7px;
+}
+.middlePage {
+	width: 680px;
+    height: 500px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.logo {
+	color:#CCC;
+}   
 
 
     </style>
@@ -20,21 +297,76 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <!--Needed to use Materialize icons-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 </head>
 
 <body>
 
-<h1>Login</h1>
+    
+        <!--Main Navigation-->
+        <div id="navi">
+            <nav class ="" style="background-color: rgba(31,31,31,0.85);">
+                <div class="row nav-wrapper ">
+                    <div id="nameDisplay" class="col s6 m6 l6   left-align"><a href="/">CITY HOP</a></div>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul class=" hide-on-med-and-down ">
+                        <li id="exploreLink"><a href="/home#explore">Explore</a></li>
+                        <li id="loginLink"><a href="/home">Home</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    
+        <!--Hamburger Menu Nav-->
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="/">Home</a></li>
+            <li><a href="#content">Explore</a></li>
+            <li><a href="/login">Log In</a></li>
+        </ul>
+    
+        <!--Footer-->
+        <footer id="footer" class="page-footer center " style="background: black;">
+            <div class= right">
+                <p id="cPanel" class="center-align"><a href="#" id="clear"></a><a href="/login">Login</a> | <a href="/api">City Hop API</a> | <a href="https://github.com/TonyScott44/CityHopII">GitHub Repo</a></p>
+            </div>
+        </footer>
+        
+  
 
-<a href="/login/google">Log In with Google</a>
-<a href="/login/facebook">Log In with Facebook</a>
+<div class="panel-body">
+  
+    <div class="row">
+            <div id="machotron1" class=" col s11 m11 l11">
+                    <br>
+                    <h3 class="center-align">Login</h3>
+                    <p class="center-align">    
+      
+<a href="/login/google"><a class="btn btn-block btn-social btn-google">
+        <span class="fa fa-google"></span> Log In with Google</a>
+<br>
+<a href="/login/facebook"><a class="btn btn-block btn-social btn-facebook">
+        <span class="fa fa-facebook"></span> Log In with Facebook</a>
+
+</p>
+</div>
+
+
 
 <!-- Materialize's version of compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 
 <!--Compiled and minified jQuery-->
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
 
 </body>
 
