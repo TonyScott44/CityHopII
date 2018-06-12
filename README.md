@@ -1,7 +1,7 @@
 # Project1
 CityHop - AJ, SK &amp; TS
-Live Demo @ Heroku: https://safe-peak-67705.herokuapp.com/ 
-Github Repo: https://github.com/TonyScott44/CityHopII
+*Live Demo @ Heroku: https://safe-peak-67705.herokuapp.com/ 
+*Github Repo: https://github.com/TonyScott44/CityHopII
 
 # Team CityHop
 ============
