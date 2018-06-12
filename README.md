@@ -65,6 +65,7 @@ Must be backed by a MySQL Database with a Sequelize ORM
 IV.	Show the app running and solving the problem that began your story. 
 A.	Also, talk about the features you’d like to add in an update to your app.
 
+#Future Funtionality
 o	Go deep into the itinerary bundles that will be available for purchase.
 o	Add the ability to add flights to the itinerary bundles, using data gathered from a travel API.
 o	Use crypto currency to 
@@ -75,25 +76,24 @@ o	Crypto currency widget that displays user’s preferred crypto currency that t
 o	Provide links to hotel/AirBnB/accommodations
 
 
-
-
 # Who is doing what?
-Angela is taking on:
+Angela took on:
 * HTML/CSS design
 * Presentation design
 * Project management (GitHub Issues)
 * Page(s): login.html, api-CityHop.js, ReadMe.md
 
-Sasi will be doing:
-* APIs - Google
-* MYSQL set up
+Sasi did:
+* Google Maps functionality
+* MYSQL/Sequelize DB set up
 * Page(s): city.html, city.css, logic.js
 
-Tony is handling:
+Tony handled:
 * HTML/CSS design
 * Overall layout design
 * Server set up
-* Custom API design template
+* Login/authorization functionality
+* Custom API with hardcoded data to populate city page
 * Heroku deployment
 * Project management (GitHub Issues)
 * Page(s): Landing page redesign, config, controllers
