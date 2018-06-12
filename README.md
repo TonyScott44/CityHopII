@@ -81,12 +81,12 @@ Angela took on:
 * HTML/CSS design
 * Presentation design
 * Project management (GitHub Issues)
-* Page(s): login.html, api-CityHop.js, ReadMe.md
+
 
 Sasi did:
 * Google Maps functionality
 * MYSQL/Sequelize DB set up
-* Page(s): city.html, city.css, logic.js
+
 
 Tony handled:
 * HTML/CSS design
@@ -96,4 +96,4 @@ Tony handled:
 * Custom API with hardcoded data to populate city page
 * Heroku deployment
 * Project management (GitHub Issues)
-* Page(s): Landing page redesign, config, controllers
+
