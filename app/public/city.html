@@ -29,7 +29,7 @@
         body {
             width:100%;
             height:100%;
-            position: relative;
+
         }
         #explore {
             margin: 0 0 0 0;
@@ -145,7 +145,7 @@
             margin: 1549px 0 0 0;
             position: absolute;
             width:100%;
-            z-index: 9999;
+            z-index: 1;
         }
         #cPanel {
             margin: 10px 0 40px 0;
@@ -184,6 +184,8 @@
 
             position: absolute;
             width:100%;
+            top:190px;
+
         }
         #upperLeft {
             border: 1px solid;
@@ -221,7 +223,6 @@
             font-weight:normal;
             font-size: 3vh;
             margin: 15px 0 0 15px;
-
             position: relative ;
 
         }
@@ -233,6 +234,16 @@
         }
         .collapsible-header {
             font-size: 3vh;
+            z-index: 9999;
+            position: relative;
+        }
+        .collapsible-body {
+            z-index: 9999;
+            position: relative;
+        }
+        .collapsible{
+            z-index: 9999;
+            position: relative;
         }
         #scrollNote {
             text-align: center;
@@ -254,6 +265,12 @@
 
             width :34px;
             height: 55px;
+        }
+        #scrollText{
+            margin: 25px 0 0 120px;
+            font-size: 17px;
+            font-weight: bold;
+
         }
         .mousey {
             width: .3vh;
@@ -361,25 +378,21 @@
 </ul>
 
 <!--Scroll/Mouse Animation-->
-<div id="scrollNote" class="center">
+<!--<div id="scrollNote" class="center">-->
 
-    <div class="scroll-downs">
-        <div class="mousey">
-            <div class="scroller"></div>
-        </div>
-    </div>
-    <p id="scrollText" style="color: white;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Scroll down to &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;purchase a City Package</p>
-</div> <!--End Scroll Animation-->
+    <!--<div class="scroll-downs">-->
+        <!--<div class="mousey">-->
+            <!--<div class="scroller"></div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<p id="scrollText" style="color: #00b4b4;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;CITY PACKAGES COMING SOON!</p>-->
+<!--</div> &lt;!&ndash;End Scroll Animation&ndash;&gt;-->
 <!--Explore Area Background Image-->
 <img id="explore" class="" src="" alt="">
 
 <div id="weather" hidden>
     <a id="weather2" class="weatherwidget-io" href="https://forecast7.com/en/40d71n74d01/new-york/?unit=us"
        data-label_1="" data-label_2="WEATHER" data-theme="dark" > </a>
-</div>
-
-<div id="invlCity" hidden>
-    <h1 id="falseCity"></h1><h1> We apologize.  City-Hop</h1>
 </div>
 
 <div id = "container" class="center" >
@@ -487,89 +500,89 @@
     </div>
 
 
-    <div  id="machotron1 " class=" container col s12 m12">
-        <div  class="card  ">
-            <div  class="card-content " style="background: black; color:white;">
-                <!--<div class="card-title">Table Reservation</div>-->
-                <div class="card-body">
+    <!--<div  id="machotron1 " class=" container col s12 m12">-->
+        <!--<div  class="card  ">-->
+            <!--<div  class="card-content " style="background: black; color:white;">-->
+                <!--&lt;!&ndash;<div class="card-title">Table Reservation</div>&ndash;&gt;-->
+                <!--<div class="card-body">-->
 
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">person_add</i>
-                            <input id="name" type="text" class="validate">
-                            <label for="name">Name</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">person_add</i>
-                            <input id="lastName" type="text" class="validate">
-                            <label for="lastName">Last Name</label>
-                        </div>
-                    </div>
+                    <!--<div class="row">-->
+                        <!--<div class="input-field col s12">-->
+                            <!--<i class="material-icons prefix">person_add</i>-->
+                            <!--<input id="name" type="text" class="validate">-->
+                            <!--<label for="name">Name</label>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="row">-->
+                        <!--<div class="input-field col s12">-->
+                            <!--<i class="material-icons prefix">person_add</i>-->
+                            <!--<input id="lastName" type="text" class="validate">-->
+                            <!--<label for="lastName">Last Name</label>-->
+                        <!--</div>-->
+                    <!--</div>-->
 
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">email</i>
-                            <input id="email" type="email" class="validate">
-                            <label for="email">Email</label>
-                            <span class="helper-text" data-error="wrong" data-success="right"></span>
-                        </div>
-                    </div>
+                    <!--<div class="row">-->
+                        <!--<div class="input-field col s12">-->
+                            <!--<i class="material-icons prefix">email</i>-->
+                            <!--<input id="email" type="email" class="validate">-->
+                            <!--<label for="email">Email</label>-->
+                            <!--<span class="helper-text" data-error="wrong" data-success="right"></span>-->
+                        <!--</div>-->
+                    <!--</div>-->
 
-                    <div class="row">
-                        <div  class="input-field col s12">
-                            <select multiple id="hopSelect">
-                                <option value="" disabled selected>Create your package or select a la carte.</option>
-                                <option id="buyHop1" value="" style="background: rgba(31,31,31,0.75); color: white"></option>
-                                <option id="buyHop2" value="" style="background: rgba(31,31,31,0.75); color: white"></option>
-                                <option id="buyHop3" value="" style="background: rgba(31,31,31,0.75); color: white"></option>
-                                <option id="buyHop4" value="" style="background: rgba(31,31,31,0.75); color: white"></option>
-                            </select>
-                            <label>Hop Selector</label>
-                        </div>
-                    </div>
+                    <!--<div class="row">-->
+                        <!--<div  class="input-field col s12">-->
+                            <!--<select multiple id="hopSelect">-->
+                                <!--<option value="" disabled selected>Create your package or select a la carte.</option>-->
+                                <!--<option id="buyHop1" value="" style="background: rgba(31,31,31,0.75); color: white"></option>-->
+                                <!--<option id="buyHop2" value="" style="background: rgba(31,31,31,0.75); color: white"></option>-->
+                                <!--<option id="buyHop3" value="" style="background: rgba(31,31,31,0.75); color: white"></option>-->
+                                <!--<option id="buyHop4" value="" style="background: rgba(31,31,31,0.75); color: white"></option>-->
+                            <!--</select>-->
+                            <!--<label>Hop Selector</label>-->
+                        <!--</div>-->
+                    <!--</div>-->
 
-                    <div class="row">
-                        <div class="input-field col s12 ">
-                            <i class="material-icons prefix ">payment</i>
-                            <input id="ccNum" type="text" class="validate ">
-                            <label for="ccNum">Credit Card Number</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">today</i>
-                            <input id="expDate" type="text" class="validate">
-                            <label for="expDate">Exp. Date</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">enhanced_encryption</i>
-                            <input id="secCode" type="text" class="validate">
-                            <label for="secCode">Security Code</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">markunread_mailbox</i>
-                            <input id="address" type="text" class="validate">
-                            <label for="address">Billing Address</label>
-                        </div>
+                    <!--<div class="row">-->
+                        <!--<div class="input-field col s12 ">-->
+                            <!--<i class="material-icons prefix ">payment</i>-->
+                            <!--<input id="ccNum" type="text" class="validate ">-->
+                            <!--<label for="ccNum">Credit Card Number</label>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="row">-->
+                        <!--<div class="input-field col s12">-->
+                            <!--<i class="material-icons prefix">today</i>-->
+                            <!--<input id="expDate" type="text" class="validate">-->
+                            <!--<label for="expDate">Exp. Date</label>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="row">-->
+                        <!--<div class="input-field col s12">-->
+                            <!--<i class="material-icons prefix">enhanced_encryption</i>-->
+                            <!--<input id="secCode" type="text" class="validate">-->
+                            <!--<label for="secCode">Security Code</label>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="row">-->
+                        <!--<div class="input-field col s12">-->
+                            <!--<i class="material-icons prefix">markunread_mailbox</i>-->
+                            <!--<input id="address" type="text" class="validate">-->
+                            <!--<label for="address">Billing Address</label>-->
+                        <!--</div>-->
 
-                        <form action="/jetLounge" method="get">
-                            <button id="submit" class="btn waves-effect waves-light" type="submit" name="action" style="background: #009191;" onclick="click()">Submit Order
-                                <i class="material-icons right">send</i>
-                            </button>
-                        </form>
+                        <!--<form action="/jetLounge" method="get">-->
+                            <!--<button id="submit" class="btn waves-effect waves-light" type="submit" name="action" style="background: #009191;" onclick="click()">Submit Order-->
+                                <!--<i class="material-icons right">send</i>-->
+                            <!--</button>-->
+                        <!--</form>-->
 
-                    </div>
-                </div>
-            </div>
-        </div>
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
 
-    </div>
+    <!--</div>-->
 
 
 
@@ -578,7 +591,7 @@
 
 
     <!--Footer-->
-    <footer id="footer" class="page-footer center " style="background: black;">
+    <footer id="footer" class="page-footer center " style="background: rgba(31,31,31,0.95);">
         <div class= right">
             <p id="cPanel" class="center-align"><a href="#" id="clear"></a><a href="/login">Login</a> | <a href="/api">City Hop API</a> | <a href="https://github.com/TonyScott44/CityHopII">GitHub Repo</a></p>
         </div>
@@ -670,20 +683,24 @@
         .done(function(cityData){
 
 
-            var blat = 33.7756178;
-            var blng = -84.39628499999998;
-            var map = new google.maps.Map(document.getElementById('maps'), {
-                zoom: 14,
-                center: {lat: blat, lng: blng}
-            });
-            var marker = new google.maps.Marker({
-                position: {lat: blat, lng: blng},
-                map: map
-            });
 
 
             for (var i = 0; i < cityData.length; i++) {
+
+
                 if (city === cityData[i].name) {
+
+                    var blat = cityData[i].cityHop1.gps.lat
+                    var blng = cityData[i].cityHop1.gps.lon;
+
+                    var map = new google.maps.Map(document.getElementById('maps'), {
+                        zoom: 14,
+                        center: {lat: blat, lng: blng}
+                    });
+                    var marker = new google.maps.Marker({
+                        position: {lat: blat, lng: blng},
+                        map: map
+                    });
 
                     x = i;
                     $('#weather').show();
