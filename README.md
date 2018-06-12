@@ -91,7 +91,7 @@ Sasi did:
 
 Tony handled:
 * HTML/CSS design
-* Overall layout home & city pages design
+* Overall layout Home & City pages design
 * Server set up
 * Login/authorization functionality
 * Custom API with hardcoded data to populate city page
