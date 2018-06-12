@@ -1,4 +1,4 @@
-# Project1
+# Project2
 CityHop - AJ, SK &amp; TS
 
 Live Demo @ Heroku: https://safe-peak-67705.herokuapp.com/ 
