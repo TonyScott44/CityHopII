@@ -79,6 +79,7 @@ o	Provide links to hotel/AirBnB/accommodations
 # Who is doing what?
 Angela took on:
 * HTML/CSS design
+* Overall layout design of Login Page
 * Presentation design
 * Project management (GitHub Issues)
 
@@ -90,7 +91,7 @@ Sasi did:
 
 Tony handled:
 * HTML/CSS design
-* Overall layout design
+* Overall layout home & city pages design
 * Server set up
 * Login/authorization functionality
 * Custom API with hardcoded data to populate city page
