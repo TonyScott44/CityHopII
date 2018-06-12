@@ -31,101 +31,22 @@
 font-family: 'Raleway', sans-serif;
 }
 
-#hero-vid {
-    /*backface-visibility: hidden;*/
-    background-color: white;
-    background-size: cover;
-    bottom: 0;
-    min-height: 100%;
-    min-width: 100%;
-    position: fixed;
-    right: 0;
-    width: auto;
-    z-index: -1;
-}
-#explore {
-    margin: 74px 0 0 0;
-    width:100%;
-    height:120vh;
-}
-#state {
-    bottom:0;
-    cursor:pointer;
-    font-size:2.25rem;
-    left:0;
-    line-height:1;
-    padding:2rem 2.5rem 1.65rem;
-    /*position:absolute;*/
-}
-#overlay {
-    background-color:rgba(0,0,0,.60);
-    height:100%;
-    left:0;
-    position:relative;
-    top:0;
-    bottom: 0;
-    transition:background-color 300ms ease;
-    width:100%;
-}
-#cityLogo {
-    width: 30vh;
-    height: 55vh;
-    margin-top: 20vh;
-    padding: 0 0 0 0;
-}
-#scrollNote {
-    text-align: center;
-    width: 100%;
-    height: 10vh;
-    position: absolute;
-    top: 90vh;
-    left: 0;
-    z-index: 99;
-    background-color: rgba(31, 31, 31, 0.85);
-}
-.scroll-downs {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
 
-    width :34px;
-    height: 55px;
-}
-.mousey {
-    width: .3vh;
-    padding: 10px 15px;
-    height: 4.5vh;
-    border: 2px solid #fafafa;
-    border-radius: 25px;
-    opacity: 0.75;
-    box-sizing: content-box;
-
-}
-.scroller {
-    width: 3px;
-    height: 10px;
-    border-radius: 25%;
-    background-color: #fafafa;
-    animation-name: scroll;
-    animation-duration: 2.2s;
-    animation-timing-function: cubic-bezier(.15,.41,.69,.94);
-    animation-iteration-count: infinite;
-    background-color: rgba(0, 180, 180, 0.7);
-}
-@keyframes scroll {
+     @keyframes scroll {
     0% { opacity: 0; }
     10% { transform: translateY(0); opacity: 1; }
     100% { transform: translateY(15px); opacity: 0;}
 }
+
+     .nav-wrapper {
+         font-size: 18px;
+     }
 nav {
     color: #fff;
     font-family:'ABeeZee';
     font-weight:normal;
     font-style:normal;
-    font-size: 6vh;
+
     width: 50px;
     height: 100%;
     line-height: 56px;
@@ -206,24 +127,7 @@ h3 {
     border-bottom-color: #00b4b4;
     padding-bottom: 10px;
 }
-#searchArea {
-    font-family: 'Exo 2', sans-serif;
-    border: 2px solid;
-    border-color: #00b4b4;
-    border-radius: 25px;
-    background-color: rgba(122, 122, 122, 0.3);
-    margin: 0 40px 0 40px;
-}
-#searchTitle {
-    font-size: 40px;
-    border:none;
-}
-#searchBox {
-    margin: 0 80px 0 80px;
-}
-#submit {
-    margin: 0 0 30px 0;
-}
+
 #nameDisplay {
     left: 10vh;
     font-family: 'Exo 2', sans-serif;
@@ -232,9 +136,6 @@ h3 {
 }
 ul {
     font-size: 5vh;
-}
-li {
-    margin: 0 0 0 0;
 }
 
 footer {
@@ -271,24 +172,7 @@ a:active {
    margin: 0 0 0 380px;
 }
 
-.spacing {
-	padding-top:7px;
-	padding-bottom:7px;
-}
-.middlePage {
-	width: 680px;
-    height: 500px;
-    position: absolute;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-}
 
-.logo {
-	color:#CCC;
-}   
 
 
     </style>
@@ -311,10 +195,7 @@ a:active {
                 <div class="row nav-wrapper ">
                     <div id="nameDisplay" class="col s6 m6 l6   left-align"><a href="/">CITY HOP</a></div>
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                    <ul class=" hide-on-med-and-down ">
-                        <li id="exploreLink"><a href="/home#explore">Explore</a></li>
-                        <li id="loginLink"><a href="/home">Home</a></li>
-                    </ul>
+
                 </div>
             </nav>
         </div>
